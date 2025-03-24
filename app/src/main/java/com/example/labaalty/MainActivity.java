@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<Countries> countryList = new ArrayList<>();
-        countryList.add(new Countries("Vietnam", "98,000,000", R.drawable.vietnam_flag));
-        countryList.add(new Countries("United States", "320,000,000", R.drawable.usa_flag));
-        countryList.add(new Countries("Russia", "142,000,000", R.drawable.russia_flag));
+        countryList.add(new Countries("Vietnam", "98,000,000", R.drawable.flag_of_vietnam));
+        countryList.add(new Countries("United States", "320,000,000", R.drawable.flag_of_the_united_states));
+        countryList.add(new Countries("Russia", "142,000,000", R.drawable.flag_of_russia));
 
         CountryAdap CountryAdap = new CountryAdap(countryList);
 
