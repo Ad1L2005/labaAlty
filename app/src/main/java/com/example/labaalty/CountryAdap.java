@@ -1,19 +1,22 @@
 package com.example.labaalty;
 
-
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class CountryAdap extends RecyclerView.Adapter<CountryAdap.ViewHolder> {
     private final List<Countries> countryList;
+    private final Context context;
 
-    public CountryAdap(List<Countries> countryList) {
+    public CountryAdap(Context context, List<Countries> countryList) {
+        this.context = context;
         this.countryList = countryList;
     }
 
@@ -31,6 +34,12 @@ public class CountryAdap extends RecyclerView.Adapter<CountryAdap.ViewHolder> {
         holder.textViewCountry.setText(country.getName());
         holder.textViewPopulation.setText("Population: " + country.getPopulation());
         holder.imageViewFlag.setImageResource(country.getFlagResId());
+
+        // Обработка нажатия на элемент
+        holder.itemView.setOnClickListener(v -> {
+            String message = "Selected: " + country.getName() + " (Population: " + country.getPopulation() + ")";
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -50,4 +59,3 @@ public class CountryAdap extends RecyclerView.Adapter<CountryAdap.ViewHolder> {
         }
     }
 }
-

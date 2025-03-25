@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         countryList.add(new Countries("United States", "320,000,000", R.drawable.flag_of_the_united_states));
         countryList.add(new Countries("Russia", "142,000,000", R.drawable.flag_of_russia));
 
-        CountryAdap CountryAdap = new CountryAdap(countryList);
-
+        CountryAdap CountryAdap = new CountryAdap(this, countryList);
         recyclerView.setAdapter(CountryAdap);
     }
 }
